@@ -1,0 +1,15 @@
+// Note: "common.gradle" in the root project contains additional initialization
+//   for this project. This initialization is applied in the "build.gradle"
+//   of the root project.
+
+ext.moduleName = 'toybox.streams'
+
+dependencies {
+    // TODO: Add dependencies here
+    //   but note that JUnit should have already been added in parent.gradle.
+    //   By default, only the Maven Central Repository is specified in
+    //   parent.gradle.
+    //
+    // You can read more about how to add dependency here:
+    //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
+}
