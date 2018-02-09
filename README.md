@@ -15,5 +15,5 @@ This project is actually two things in one:
 
 ## Further goals:
 1. Add _meaningful_ Javadoc documentation. Not documenting for documenting's sake.
-2. Add JUnit tests to each class.
+2. Add Spock tests to each class.
 3. Add some form of continuous integration. Travis CI maybe?
