@@ -6,6 +6,7 @@ import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.OptionalLong;
 
+@SuppressWarnings({"OptionalIsPresent", "OptionalUsedAsFieldOrParameterType"})
 public final class OptionalConverters {
 	
 	public static Optional<Integer> primitiveToBoxed(OptionalInt original) {
@@ -30,7 +31,8 @@ public final class OptionalConverters {
 	
 	public static OptionalLong boxedToOptionalLong(Optional<Long> original) {
 		Objects.requireNonNull(original);
-		return original.isPresent() ? OptionalLong.of(original.get().longValue()) : OptionalLong.empty();
+		//noinspection OptionalIsPresent
+		return original.isPresent() ? OptionalLong.of(original.get()) : OptionalLong.empty();
 	}
 	
 	public static OptionalDouble boxedToOptionalDouble(Optional<Double> original) {
@@ -38,13 +40,14 @@ public final class OptionalConverters {
 		return original.isPresent() ? OptionalDouble.of(original.get().longValue()) : OptionalDouble.empty();
 	}
 
-	public static <T, U> Optional<U> castIntoOptional(Optional<T> original, Class<U> target) {
+	public static <T> Optional<T> castIntoOptional(Object original, Class<T> target) {
 		Objects.requireNonNull(original);
 		Objects.requireNonNull(target);                
-                return target.isInstance(original) ? Optional.of(target.cast(original)) : Optional.empty();
+		return target.isInstance(original) ? Optional.of(target.cast(original)) : Optional.empty();
 	}	
 	
 	private OptionalConverters() {
 		// This class is not meant to be instantiated.
 	}
+
 }

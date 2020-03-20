@@ -64,11 +64,6 @@ public final class Converters {
         }
     }
 
-    public static <T> Optional<T> castToOptional(Object obj, Class<T> target) {
-        Objects.requireNonNull(target);
-        return target.isInstance(obj) ? Optional.of(target.cast(obj)) : Optional.empty();
-    }
-
     private Converters() {
         // This class is not meant to be instantiated.
     }

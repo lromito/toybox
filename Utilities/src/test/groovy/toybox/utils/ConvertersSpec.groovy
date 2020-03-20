@@ -39,19 +39,6 @@ class ConvertersSpec extends Specification {
             !converted.isPresent()
     }
     
-    def "castToOptional returns an Optional with a converted value or empty if it cannot be converted"() {
-        given:
-            CharSequence aString = "A string"
-        when:
-            def optional = Converters.castToOptional(aString, String.class)
-        then:
-            optional.isPresent()
-            optional.orElse("fail") == aString
-            
-        when:
-            optional = Converters.castToOptional(aString, Long.class)
-        then:
-            !optional.isPresent()
-    }
+
 }
 
